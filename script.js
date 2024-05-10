@@ -3,7 +3,7 @@ function filtro(marca) {
     var todasAsMarcas = document.querySelectorAll('.marcas'); // Aqui, estamos selecionando todos os elementos com a classe 'marcas' e armazenando-os em uma variável.
 
     todasAsMarcas.forEach(function(marcaAtual) { // Este loop forEach itera sobre cada elemento com a classe 'marcas'.
-        var cardsDaMarca = marcaAtual.querySelector('.container-card'); // Aqui, estamos selecionando o elemento com a classe 'cards' dentro de cada elemento com a classe 'marcas'.
+        var cardsDaMarca = marcaAtual.querySelector('.container-card'); // Aqui, estamos selecionando o elemento com a classe 'container-card' dentro de cada elemento com a classe 'marcas'.
 
         if (marcaAtual.id === marca.toLowerCase() || marca === 'TODOS') { // Verificamos se o ID do elemento atual é igual à marca selecionada (em letras minúsculas) ou se a marca selecionada é 'TODOS'.
             cardsDaMarca.style.display = 'flex'; // Se a condição for verdadeira, exibimos os cards da marca definindo o estilo de exibição como 'flex'.
