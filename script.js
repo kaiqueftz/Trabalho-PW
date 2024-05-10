@@ -13,6 +13,19 @@ function filtro(marca) {
     });
 }
 
+var button = document.getElementById('btn-continuar');
+
+button.addEventListener('click', function() {
+    var card = document.querySelector('.marcas')
+    card.classList.toggle('active');
+
+    if(card.classList.contains('active')) {
+        return button.textContent = 'FECHAR'
+    }
+
+    button.textContent = 'CONTINUAR';
+});
+
 document.querySelectorAll('.logo-click').forEach(function(logo) { // Este loop forEach seleciona todas as divs com a classe 'logo-click' e adiciona um ouvinte de eventos de clique a cada uma.
     // Adiciona um ouvinte de eventos de clique a cada div de logo
     logo.addEventListener('click', function() { // Aqui, adicionamos um ouvinte de eventos de clique a cada div com a classe 'logo-click'.
@@ -22,27 +35,6 @@ document.querySelectorAll('.logo-click').forEach(function(logo) { // Este loop f
         filtro(marca); // Chamamos a função de filtro e passamos o ID da marca como argumento.
     });
 });
-
-// Define a função filtroVerMais, que recebe um parâmetro verMais.
-function filtroVerMais (verMais) {
-    // Busca o elemento com o id 'ver-mais' e o armazena na variável verMenos.
-    let verMenos = document.getElementById('ver-mais')
-    // Busca o elemento com o id 'open-cards' e o armazena na variável buttonVerMais.
-    var buttonVerMais = document.getElementById('open-cards')
-    
-    // Verifica se o estilo de buttonVerMais é 'none' (oculto).
-    if(buttonVerMais.style.display === 'none') {
-        // Se estiver oculto, muda o estilo para 'flex' (visível) e altera o texto do elemento verMenos para 'Fechar'.
-        buttonVerMais.style.display = 'flex'
-        verMenos.textContent = 'Fechar'
-    } else {
-        // Se não estiver oculto, oculta o elemento buttonVerMais e altera o texto do elemento verMenos para 'Continuar'.
-        buttonVerMais.style.display = 'none'
-        verMenos.textContent = 'Continuar'
-    }
-}
-
-filtroVerMais()
 
 function aceitaMensagem() {
     let divMensagemUsuario = document.getElementById("container-mensagem-usuario");
